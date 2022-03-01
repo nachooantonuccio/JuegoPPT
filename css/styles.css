@@ -1,0 +1,125 @@
+html{
+	font-family: 'Kanit', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.conteiner {
+	text-align: center;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 4px;
+	box-shadow: 0 0 0 2px black;
+	text-align: center;
+}
+
+#logo{
+	width: 100px;
+}
+
+button {
+    width: 95px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.elementos{
+	display: flex;
+	justify-content: center;
+}
+
+.conteiner-opcion {
+    margin: 10px;
+    width: 100px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    float: right;
+    border-radius: 5px;
+    box-shadow: 0 0 0 2px black;
+}
+
+.conteiner-opcion:hover {
+    background-color: #D3D3D3;
+}
+
+.conteiner-opcion img{
+	width: 100px;
+}
+
+span{
+    display: flex;
+    justify-content: left;
+}
+
+.robot{
+    margin: 10px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/robot.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    padding: 10px;
+    box-shadow: 0 0 0 2px black;
+}
+
+.elecciones{
+	display: flex;
+	justify-content: center;
+}
+
+.eleccionHumano{
+    margin: 10px;
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-margin: 10px;
+    float: left;
+}
+
+.eleccionRobot{
+    margin: 10px;
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-margin: 10px;
+    float: left;
+}
+
+.resultado{
+	margin: 10px;
+	color: black;
+    width: auto;
+    height: 60px;
+    background-color: #D3D3D3;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.piedra{
+	background-image: url('../img/piedra.png');
+}
+
+.papel{
+	background-image: url('../img/papel.png');
+}
+
+.tijera{
+	background-image: url('../img/tijera.png');
+}
+

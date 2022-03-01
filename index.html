@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Juego: Piedra, Papel o Tijera</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="text/javascript" src="js/juego.js" ></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:wght@700&family=Ubuntu&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+</head>
+<body>
+	<div class="conteiner">
+		<h2>Piedra, Papel o Tijera</h2>
+		<h3>Empeza a jugar. Gana la partida el que llega primero a 3</h3>
+		<img id="logo" src="img/piedra-papel-tijeras.png">
+		<h4>Elegí lo que vas a sacar</h4>
+		<div class="elementos">
+			<div id="piedra" class="conteiner-opcion" onclick = "seleccionDeElemento('piedra')"><img src="img/piedra.png"></div>
+			<div id="papel" class="conteiner-opcion" onclick = "seleccionDeElemento('papel')"><img src="img/papel.png"></div>
+			<div id="tijera" class="conteiner-opcion" onclick = "seleccionDeElemento('tijera')"><img src="img/tijera.png"></div>
+		</div>
+		<span>
+			<div class="robot"></div>
+			<div class="elecciones">
+				<div id="eleccionRobot" class="eleccionRobot"></div>
+				<div id="eleccionHumano" class="eleccionHumano"></div>
+			</div>
+			</span>
+		<div id="resultado" class="resultado">Resultado </div>
+		<div id="contadores" class="resultado">Robot: 0 <br> Humano: 0</div>
+		<button onclick="reiniciarJuego()">Reiniciar</button>
+	</div>
+</body>
+</html>
