@@ -1,6 +1,11 @@
 var contadorHumano = 0;
 var contadorRobot = 0;
 
+const divEleccionRobot = document.getElementById("eleccionRobot");
+const divEleccionHumano = document.getElementById("eleccionHumano");
+const divContador = document.getElementById("contador");
+const divResultado = document.getElementById("resultado");
+
 
 function aleatorio(minimo, maximo){
     var numero = Math.floor( Math.random() * (maximo - minimo + 1) + minimo );
@@ -8,20 +13,23 @@ function aleatorio(minimo, maximo){
 }
 
 function reiniciarJuego(){
-	document.getElementById("eleccionRobot").classList.remove("papel");
-	document.getElementById("eleccionRobot").classList.remove("tijera");
-	document.getElementById("eleccionRobot").classList.remove("piedra");
-	document.getElementById("eleccionHumano").classList.remove("papel");
-	document.getElementById("eleccionHumano").classList.remove("tijera");
-	document.getElementById("eleccionHumano").classList.remove("piedra");
+    divResultado.style.backgroundColor = '#D3D3D3';
+	divEleccionRobot.classList.remove("papel");
+	divEleccionRobot.classList.remove("tijera");
+	divEleccionRobot.classList.remove("piedra");
+	divEleccionHumano.classList.remove("papel");
+	divEleccionHumano.classList.remove("tijera");
+	divEleccionHumano.classList.remove("piedra");
 	contadorHumano = 0;
 	contadorRobot = 0;
-	document.getElementById("contadores").innerHTML = "Robot: " + contadorRobot + "<br>";
-	document.getElementById("contadores").innerHTML += "Humano: " + contadorHumano + "<br>";
-	document.getElementById("resultado").innerHTML= "Resultado ";
+	divContador.innerHTML = "Robot: " + contadorRobot + "<br>";
+	divContador.innerHTML += "Humano: " + contadorHumano + "<br>";
+	divResultado.innerHTML= "Resultado ";
 }
 
 function seleccionDeElemento(id){
+
+divResultado.style.backgroundColor = '#D3D3D3';
 
 var piedra = 0;
 var papel = 1;
@@ -32,49 +40,50 @@ var opciones = ["piedra", "papel", "tijera"];
 var opcionUsuario;
 var opcionMaquina = aleatorio(0,2);
 
+
 if (opciones[opcionMaquina] == "piedra")
 {
-	opcionUsuario = 0;
-	document.getElementById("eleccionRobot").classList.remove("papel");
-	document.getElementById("eleccionRobot").classList.remove("tijera");
-	document.getElementById("eleccionRobot").classList.add("piedra");	
+    opcionUsuario = 0;
+    divEleccionRobot.classList.remove("papel");
+    divEleccionRobot.classList.remove("tijera");
+    divEleccionRobot.classList.add("piedra");   
 }
 
 if (opciones[opcionMaquina] == "papel"){
-	opcionUsuario = 1;
-	document.getElementById("eleccionRobot").classList.remove("piedra");
-	document.getElementById("eleccionRobot").classList.remove("tijera");
-	document.getElementById("eleccionRobot").classList.add("papel");
+    opcionUsuario = 1;
+    divEleccionRobot.classList.remove("piedra");
+    divEleccionRobot.classList.remove("tijera");
+    divEleccionRobot.classList.add("papel");
 }
 
 if (opciones[opcionMaquina] == "tijera"){
-	opcionUsuario = 2;
-	document.getElementById("eleccionRobot").classList.remove("papel");
-	document.getElementById("eleccionRobot").classList.remove("pidra");
-	document.getElementById("eleccionRobot").classList.add("tijera");
+    opcionUsuario = 2;
+    divEleccionRobot.classList.remove("papel");
+    divEleccionRobot.classList.remove("pidra");
+    divEleccionRobot.classList.add("tijera");
 }
 
 
 if (id == "piedra")
 {
-	opcionUsuario = 0;
-	document.getElementById("eleccionHumano").classList.remove("piedra");
-	document.getElementById("eleccionHumano").classList.remove("tijera");
-	document.getElementById("eleccionHumano").classList.add("piedra");	
+    opcionUsuario = 0;
+    divEleccionHumano.classList.remove("papel");
+    divEleccionHumano.classList.remove("tijera");
+    divEleccionHumano.classList.add("piedra");  
 }
 
 if (id == "papel"){
-	opcionUsuario = 1;
-	document.getElementById("eleccionHumano").classList.remove("piedra");
-	document.getElementById("eleccionHumano").classList.remove("tijera");
-	document.getElementById("eleccionHumano").classList.add("papel");
+    opcionUsuario = 1;
+    divEleccionHumano.classList.remove("piedra");
+    divEleccionHumano.classList.remove("tijera");
+    divEleccionHumano.classList.add("papel");
 }
 
 if (id == "tijera"){
-	opcionUsuario = 2;
-	document.getElementById("eleccionHumano").classList.remove("papel");
-	document.getElementById("eleccionHumano").classList.remove("pidra");
-	document.getElementById("eleccionHumano").classList.add("tijera");
+    opcionUsuario = 2;
+    divEleccionHumano.classList.remove("papel");
+    divEleccionHumano.classList.remove("pidra");
+    divEleccionHumano.classList.add("tijera");
 }
 
 
@@ -83,16 +92,16 @@ if(opcionUsuario == piedra)
 {
     if(opcionMaquina == piedra)
     {
-        document.getElementById("resultado").innerHTML="Empate!";
+        divResultado.innerHTML="Empate!";
     }
     else if(opcionMaquina == papel)
     {
-        document.getElementById("resultado").innerHTML="Perdiste!";
+        divResultado.innerHTML="Perdiste!";
         contadorRobot++;
     }
     else if(opcionMaquina == tijera)
     {
-        document.getElementById("resultado").innerHTML="Ganaste!";
+        divResultado.innerHTML="Ganaste!";
         contadorHumano++;
     }
 }
@@ -100,16 +109,16 @@ else if(opcionUsuario == papel)
 {
     if(opcionMaquina == piedra)
     {
-        document.getElementById("resultado").innerHTML="Ganaste!";
+        divResultado.innerHTML="Ganaste!";
         contadorHumano++;
     }
     else if(opcionMaquina == papel)
     {
-         document.getElementById("resultado").innerHTML="Empate!";
+         divResultado.innerHTML="Empate!";
     }
     else if(opcionMaquina == tijera)
     {
-        document.getElementById("resultado").innerHTML="Perdiste!";
+        divResultado.innerHTML="Perdiste!";
         contadorRobot++;
     }
 }
@@ -117,17 +126,17 @@ else if(opcionUsuario == tijera)
 {
     if(opcionMaquina == piedra)
     {
-        document.getElementById("resultado").innerHTML="Perdiste!";
+       divResultado.innerHTML="Perdiste!";
         contadorRobot++;
     }
     else if(opcionMaquina == papel)
     {
-        document.getElementById("resultado").innerHTML="Ganaste!";
+        divResultado.innerHTML="Ganaste!";
         contadorHumano++;
     }
     else if(opcionMaquina == tijera)
     {
-         document.getElementById("resultado").innerHTML="Empate!";
+        divResultado.innerHTML="Empate!";
     }
 }
 else
@@ -135,13 +144,67 @@ else
     console.log("¿Pos qué carajo?");
 }
 
-document.getElementById("contadores").innerHTML = "Robot: " + contadorRobot + "<br>";
-document.getElementById("contadores").innerHTML += "Humano: " + contadorHumano + "<br>";
+
+divContador.innerHTML = "Robot: " + contadorRobot + "<br>";
+divContador.innerHTML += "Humano: " + contadorHumano + "<br>";
+
+setTimeout(()=>{
+    document.getElementById("temporizadorElemento").innerHTML="¡PIEDRA";
+},1000);
+
+
+setTimeout(()=>{
+    document.getElementById("temporizadorElemento").innerHTML="PAPEL";
+},2000);
+
+
+setTimeout(()=>{
+    document.getElementById("temporizadorElemento").innerHTML="O TIJERA!";
+},3000);
 
 if(contadorRobot == 3 || contadorHumano == 3){
-	document.getElementById("resultado").innerHTML += "<br> Se termino la partida";
+	divResultado.innerHTML += "<br> Se termino la partida";
+    document.getElementById("temporizadorElemento").innerHTML="";
+    clearTimeout(temporizador1);
+    clearTimeout(temporizador2);
+    clearTimeout(temporizador3);
+    if(contadorRobot == 3){
+        divResultado.style.backgroundColor = '#FF6059';
+    } else {
+        divResultado.style.backgroundColor = '#8EFC46';
+    }
 	contadorRobot = 0;
 	contadorHumano = 0;
+
 }
 
 }
+
+conteinerElementos = document.querySelector(".conteiner-elementos");
+conteinerElementos.addEventListener('click',function (event){
+
+    seleccionDeElemento(event.target.id);
+
+},false);
+
+
+botonReiniciar = document.getElementById("botonReiniciar");
+botonReiniciar.addEventListener('click',function (event){
+
+    reiniciarJuego();
+    
+},false);
+
+const temporizador1 = setTimeout(()=>{
+    document.getElementById("temporizadorElemento").innerHTML="¡PIEDRA";
+},1000);
+
+
+const temporizador2 = setTimeout(()=>{
+    document.getElementById("temporizadorElemento").innerHTML="PAPEL";
+},2000);
+
+
+const temporizador3 = setTimeout(()=>{
+    document.getElementById("temporizadorElemento").innerHTML="O TIJERA!";
+},3000);

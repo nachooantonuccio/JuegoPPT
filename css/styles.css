@@ -27,7 +27,7 @@ button {
     padding: 5px;
 }
 
-.elementos{
+.conteiner-elementos{
 	display: flex;
 	justify-content: center;
 }
@@ -41,7 +41,7 @@ button {
     flex-direction: row-reverse;
     float: right;
     border-radius: 5px;
-    box-shadow: 0 0 0 2px black;
+    border: 2px black solid;
 }
 
 .conteiner-opcion:hover {
@@ -54,7 +54,7 @@ button {
 
 span{
     display: flex;
-    justify-content: left;
+    justify-content: center;
 }
 
 .robot{
@@ -66,48 +66,56 @@ span{
     background-size: 200px;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 10px;
+    border: 2px black solid;
     float: left;
     padding: 10px;
-    box-shadow: 0 0 0 2px black;
 }
 
-.elecciones{
+.conteiner-elecciones{
 	display: flex;
 	justify-content: center;
 }
 
 .eleccionHumano{
     margin: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100px;
     height: 100px;
     padding: 10px;
     background-size: 100px;
     background-repeat: no-repeat;
+    background-position: center;
     background-margin: 10px;
     float: left;
 }
 
 .eleccionRobot{
     margin: 10px;
-    margin-top: 30px;
+    margin-left: 50px;
+    margin-top: 70px;
     width: 100px;
     height: 100px;
     padding: 10px;
     background-size: 100px;
     background-repeat: no-repeat;
+    background-position: center;
     background-margin: 10px;
     float: left;
 }
 
 .resultado{
-	margin: 10px;
-	color: black;
+    margin: 10px;
+    color: black;
     width: auto;
     height: 60px;
     background-color: #D3D3D3;
     padding: 10px;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 2px solid black;
     border-radius: 5px;
 }
 
